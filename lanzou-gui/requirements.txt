@@ -12,3 +12,4 @@ browser_cookie3
 # pycryptodome
 # SecretStorage
 # linux： pip install secretstorage dbus-python
+urllib3>=2.6.3 # not directly required, pinned by Snyk to avoid a vulnerability
