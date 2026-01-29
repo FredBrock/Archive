@@ -5,7 +5,7 @@ RUN apk add --no-cache musl-dev libressl-dev
 COPY . .
 RUN CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse RUSTFLAGS="" cargo build --bin shadow-tls --release
 
-FROM alpine:latest
+FROM alpine:3.23.3
 
 ENV MODE=""
 ENV LISTEN=""
