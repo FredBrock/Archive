@@ -1,4 +1,4 @@
-FROM node:current-alpine
+FROM node:25.5.0-alpine3.23
 
 LABEL org.opencontainers.image.version=v1.x.y
 LABEL org.opencontainers.image.title=Socratex
