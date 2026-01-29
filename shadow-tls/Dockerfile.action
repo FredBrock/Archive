@@ -1,4 +1,4 @@
-FROM alpine:latest as builder
+FROM alpine:3.23.3 as builder
 
 ARG DOWNLOAD_BASE
 RUN ARCH=$(uname -m | sed -e "s/armv7l/armv7-unknown-linux-musleabihf/g" | sed -e "s/aarch64/aarch64-unknown-linux-musl/g" | sed -e "s/x86_64/x86_64-unknown-linux-musl/g") && \
@@ -6,7 +6,7 @@ RUN ARCH=$(uname -m | sed -e "s/armv7l/armv7-unknown-linux-musleabihf/g" | sed -
     curl -L "${DOWNLOAD_BASE}/shadow-tls-${ARCH}" -o /shadow-tls && \
     chmod +x /shadow-tls
 
-FROM alpine:latest
+FROM alpine:3.23.3
 
 ENV MODE=""
 ENV LISTEN=""
